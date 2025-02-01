@@ -126,6 +126,7 @@ body, html {
 /* ================= POST SCROLL CONTAINER ================= */
 
 .scroll-container {
+    height: 90%;
     overflow-y: auto;
 }
 
@@ -240,6 +241,21 @@ body, html {
     border: red solid .2em;
 }
 
+.create-comment-container {
+    border: green solid .15em;
+    width: 95%;
+    min-height: 5vh;
+    height: auto;
+}
+
+.create-comment-container .create-comment-field {
+    width: 100%;
+    margin: 5px;
+    min-height: 5vh;
+    font-size: 1.1em;
+    height: auto;
+}
+
 .comments-list {
     border: purple solid .15em;
     width: 95%;
@@ -291,4 +307,19 @@ body, html {
     height: auto;
     color: var(--text-primary-color);
     font-size: 1em;
+}
+
+/* ================= FOOTER ================= */
+
+.footer {
+    height: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darkest-color);
+}
+
+.footer h1 {
+    font-size: .5em;
+    color: var(--text-primary-color);
 }
