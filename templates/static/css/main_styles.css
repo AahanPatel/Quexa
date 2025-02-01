@@ -122,3 +122,95 @@ body, html {
     cursor: pointer;
     font-size: 20px;
 }
+
+/* ================= POSTS ================= */
+
+.post-container {
+
+}
+
+/* --------------- TOPICS --------------- */
+
+.topics-container {
+    
+}
+
+.topics-list {
+    
+}
+
+.topics-list li {
+    
+}
+
+.topics-list li h1 {
+    
+}
+
+/* --------------- USER --------------- */
+
+.user-container {
+    
+}
+
+.profile-picture-container {
+    
+}
+
+.user-container .username {
+    
+}
+
+/* --------------- TEXT FIELD --------------- */
+
+.post-text-field {
+    
+}
+
+.post-text-field .title {
+    
+}
+
+.post-text-field .description {
+    
+}
+
+/* --------------- IMAGES (OPTIONAL) --------------- */
+
+.post-images {
+    
+}
+
+/* ================= COMMENTS ================= */
+
+.comments-container {
+    
+}
+
+.comments-list {
+    
+}
+
+.comments-list .comment {
+    
+}
+
+/* --------------- USER --------------- */
+
+.comments-list .comment .comment-profile-picture-container {
+    
+}
+
+.comments-list .comment .comment-username {
+    
+}
+
+/* --------------- TEXT --------------- */
+
+.comments-list .comment .comment-text-container {
+    
+}
+
+.comments-list .comment .comment-text-container .comment-text {
+    
+}
