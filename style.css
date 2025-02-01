@@ -6,6 +6,7 @@
 
 :root {
     --font-family1: "Times New Roman";
+    --darkest-color: #0f0f0f;
     --primary-color: #202020;
     --primary-color-lighter: #4b4b4e;
     --text-primary-color: #dadeeb;
@@ -22,20 +23,30 @@ body, html {
 
 .header {
     display: flex;
-    flex-direction: column;
-    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    height: 7vh;
     border: 0.2em red solid;
+    background-color: var(--darkest-color);
 }
 
 .header ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    overflow: hidden;
 }
 
 .header ul li {
     float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     background-color: var(--primary-color);
+    border: blue solid .1em;
+    margin: 0px 0.5vw;
+    height: 7vh;
+    width: 10vw;
 }
 
 .header ul li:hover {
@@ -43,8 +54,9 @@ body, html {
     background-color: var(--primary-color-lighter);
 }
 
-.header ul li h1 {
-    display: block;
-    padding: 8px;
+.header ul li a {
     color: var(--text-primary-color);
+    font-size: 1.2em;
+    text-align: center;
+    text-decoration: none;
 }
