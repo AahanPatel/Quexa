@@ -9,4 +9,6 @@ function createPost() {
         groupElementContainer.classList.add('group-element-container');
         groupElementContainer.dataset.color = iconColor;
     }
+
+    // CREATE POST
 }
