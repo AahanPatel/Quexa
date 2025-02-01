@@ -1,0 +1,30 @@
+* {
+    font-family: "Helvetica";
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    top: 0vh;
+    overflow: hidden;
+    background-color: var(--background);
+    scroll-behavior: smooth;
+}
+
+:root {
+    --font-family1: "Times New Roman";
+    --primary-5: #051421;
+    --primary-4: #06242f;
+    --primary-3: #4c7272;
+    --primary-2: #86b9b0;
+    --primary-1: #cfd7d7;
+    --secondary-1: #d4aa62;
+    --secondary-2: #cc9148;
+    --secondary-3: #c45f30;
+    --background: #4a7890aa;
+    --darkest-color: #0f0f0f;
+}
