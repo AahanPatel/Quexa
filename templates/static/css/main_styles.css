@@ -123,6 +123,12 @@ body, html {
     font-size: 20px;
 }
 
+/* ================= POST SCROLL CONTAINER ================= */
+
+.scroll-container {
+    overflow-y: auto;
+}
+
 /* ================= POSTS ================= */
 
 .post-container {
@@ -235,30 +241,54 @@ body, html {
 }
 
 .comments-list {
+    border: purple solid .15em;
+    width: 95%;
+    height: auto;
+    margin: 1vh 0;
     float: left;
     list-style: none;
 }
 
 .comments-list .comment {
-    
+    border: blue solid .15em;
+    width: 100%;
+    height: auto;
 }
 
 /* --------------- USER --------------- */
 
+.comments-list .comment .comment-user-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 6vh;
+    margin: 0.5vh 0;
+    border: yellow solid .15em;
+}
+
 .comments-list .comment .comment-profile-picture-container {
-    
+    width: 35px;
+    height: 35px;
+    margin: 5px;
+    border-radius: 50%;
+    border: yellow solid .15em;
 }
 
 .comments-list .comment .comment-username {
-    
+    color: var(--text-primary-color);
+    font-size: 1.25em;
+    margin-left: 0.5vw;
 }
 
 /* --------------- TEXT --------------- */
 
 .comments-list .comment .comment-text-container {
-    
+    border: green solid .15em;
 }
 
 .comments-list .comment .comment-text-container .comment-text {
-    
+    margin: 5px;
+    height: auto;
+    color: var(--text-primary-color);
+    font-size: 1em;
 }
