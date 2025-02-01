@@ -6,6 +6,9 @@
 
 :root {
     --font-family1: "Times New Roman";
+    --primary-color: #202020;
+    --primary-color-lighter: #4b4b4e;
+    --text-primary-color: #dadeeb;
 }
 
 body, html {
@@ -14,5 +17,34 @@ body, html {
     font-family: Arial, sans-serif;
     top: 0vh;
     overflow: hidden;
+    background-color: var(--primary-color);
 }
 
+.header {
+    display: flex;
+    flex-direction: column;
+    height: 10vh;
+    border: 0.2em red solid;
+}
+
+.header ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+.header ul li {
+    float: left;
+    background-color: var(--primary-color);
+}
+
+.header ul li:hover {
+    float: left;
+    background-color: var(--primary-color-lighter);
+}
+
+.header ul li h1 {
+    display: block;
+    padding: 8px;
+    color: var(--text-primary-color);
+}
