@@ -126,69 +126,117 @@ body, html {
 /* ================= POSTS ================= */
 
 .post-container {
-
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 10%;
+    height: auto;
+    width: 80%;
+    border: red solid .2em;
 }
 
 /* --------------- TOPICS --------------- */
 
 .topics-container {
-    
+    display: flex;
+    width: 95%;
+    height: 6vh;
+    margin-top: 1vh;
+    border: blue solid .2em;
 }
 
 .topics-list {
-    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
 }
 
 .topics-list li {
-    
+    margin-left: 1vw;
+    list-style-type: none;
+    border: yellow solid .2em;
 }
 
 .topics-list li h1 {
-    
+    font-size: 1.5em;
+    color: var(--text-primary-color);
 }
 
 /* --------------- USER --------------- */
 
 .user-container {
-    
+    display: flex;
+    align-items: center;
+    width: 95%;
+    height: 6vh;
+    margin: 1vh 0;
+    border: blue solid .2em;
 }
 
 .profile-picture-container {
-    
+    width: 45px;
+    height: 45px;
+    margin: 5px;
+    border-radius: 50%;
+    border: yellow solid .15em;
 }
 
 .user-container .username {
-    
+    color: var(--text-primary-color);
+    font-size: 1.5em;
+    margin-left: 0.5vw;
 }
 
 /* --------------- TEXT FIELD --------------- */
 
 .post-text-field {
-    
+    border: blue solid .15em;
+    width: 95%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
 }
 
 .post-text-field .title {
-    
+    border: yellow solid .15em;
+    margin: 15px;
+    color: var(--text-primary-color);
+    font-size: 2em;
 }
 
 .post-text-field .description {
-    
+    border: yellow solid .15em;
+    margin: 0 15px 15px 15px;
+    height: auto;
+    color: var(--text-primary-color);
+    font-size: 1em;
 }
 
 /* --------------- IMAGES (OPTIONAL) --------------- */
 
 .post-images {
-    
+    border: blue solid .15em;
+    width: 95%;
+    height: 5vh;
+    margin-bottom: 1vh;
 }
 
 /* ================= COMMENTS ================= */
 
 .comments-container {
-    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2vh 10%;
+    height: 100%;
+    width: 80%;
+    border: red solid .2em;
 }
 
 .comments-list {
-    
+    float: left;
+    list-style: none;
 }
 
 .comments-list .comment {
