@@ -43,7 +43,7 @@ def register():
         db.session.add(new_user)
         logout_user()
         db.session.commit()
-        return redirect(url_for("services.requests", name=form.name.data))
+        return redirect(url_for("services.posts", name=form.name.data))
     return render_template('register.html', form=form)
 
 @auth_blueprint.route('/auth/login', methods=["POST", "GET"])
@@ -60,6 +60,6 @@ def login():
             form.password.errors.append('Please check your login details.')
             return render_template('login.html', form=form)
         login_user(user, remember=form.remember.data)
-        return redirect(url_for('service.dashboard'))
+        return redirect(url_for('services.posts'))
     return render_template('login.html', form=form)
 
