@@ -1,6 +1,6 @@
 from flask_login import UserMixin
 from datetime import datetime, date
-from main import db
+from app.db import db
 
 # User class
 class User(db.Model, UserMixin):

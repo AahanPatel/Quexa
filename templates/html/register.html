@@ -10,22 +10,24 @@
     <div class="body">
         <div class="main-page">
             <form method="post">
+                {{ form.csrf_token }}
                 {% if form.errors|length > 0 %}
                     {% for field, errors in form.errors.items() %}
                     <div class="alert alert-danger">
                         <small class="mx-1"> {{ '\n'.join(errors) }}</small>
                     </div>
-                    {% end for %}
+                    {% endfor %}
                 {% endif %}
                 <div class="username-field">
                 {{ form.name.label(for_="name")}}
                 {{ form.name(type_="name", class_="form-control", id_="name", placeholder_="Enter Name") }}
                 </div>
                 <div class="password-field">
-
+                {{ form.password.label(for_="password")}}
+                {{ form.password(type_="password", class_="form-control", id_="password", placeholder_="Enter Password") }}
                 </div>
                 <button type="submit" class="submit-button">SUBMIT</button>
-                <a href="\auth\register"><button type="button" class="sign-in">Sign In</button></a>
+                <a href="\auth\login"><button type="button" class="sign-in">Log In</button></a>
             </form>
         </div>
     </div>
