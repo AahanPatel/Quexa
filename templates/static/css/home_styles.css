@@ -1,0 +1,144 @@
+.body {
+    height: 95%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--darkest-color);
+    /* border: solid red .15em; */
+}
+
+/* --------------- TITLE --------------- */
+
+.description-container {
+    width: 60%;
+    height: auto;
+    display: flex;
+    margin-top: 15vh;
+    flex-direction: column;
+    padding: 0 2vw 1vh 2vw;
+    border-left: solid var(--primary-1) .2em; 
+    animation-name: left-border-anim;
+    animation-duration: 1.5s; 
+    animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
+}
+
+@keyframes left-border-anim {
+    from {
+        opacity: 0;
+        width: 70%;
+    }
+    to {
+        opacity: 1;
+        width: 60%;
+    }
+}
+
+.description-container .title {
+    color: var(--primary-1);
+    font-size: 100px;
+    animation-name: text-anim;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
+
+    /* border: solid blue .15em; */
+}
+
+.description-container .description {
+    color: var(--primary-2);
+    font-size: 30px;
+    animation-name: text-anim;
+    animation-duration: 1.5s;
+    animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
+}
+
+@keyframes text-anim {
+    from {
+        margin-left: 8vw;
+    }
+    to {
+        margin-left: 0;
+    }
+}
+
+/* --------------- BUTTONS --------------- */
+
+.button-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+    width: 60%;
+    height: 40%;
+    gap: 25px;
+    /* border: solid blue .15em; */
+}
+
+.button-container a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    width: 20vw;
+    height: 8vh;
+    text-decoration: none;
+    background-color: var(--primary-5);
+    border: solid var(--primary-2) .2em;
+}
+
+.button-container a h1 {
+    font-style: italic;
+    font-size: 1.5em;
+    text-align: center;
+    color: var(--primary-2);
+}
+
+.button-container a {
+    transition: background-color 0.5s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                border-color 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+    animation-name: button-anim;
+    animation-duration: 1.8s;
+    animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
+}
+
+.button-container a:hover {
+    background-color: var(--primary-4);
+    border-color: var(--secondary-1);
+}
+
+@keyframes button-anim {
+    from {
+        margin-top: 15vw;
+        opacity: 0;
+        transform: scale(90%);
+    }
+    to {
+        margin-top: 0;
+        opacity: 1;
+        transform: scale(100%);
+    }
+}
+
+.button-container .view-posts-button {
+    transition: transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.button-container .view-posts-button:hover {
+    transform: rotateZ(2deg) scale(105%);
+}
+
+.button-container .make-post-button {
+    transition: transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.button-container .make-post-button:hover {
+    transform: rotateZ(-2deg) scale(105%);
+}
+
+.button-container a h1 {
+    transition: color 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.button-container a:hover h1 {
+    color: var(--secondary-1);
+}

@@ -23,7 +23,7 @@
     border-top: solid var(--primary-4) 10px;
     animation-name: post-intro-anim;
     animation-duration: 2s; 
-    animation-timing-function: cubic-bezier(.19,.04,.27,1.12)
+    animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
     /* border: red solid .2em; */
 }
 
