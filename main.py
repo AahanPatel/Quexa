@@ -4,6 +4,7 @@ import os
 from app.db import db
 from routes.auth import auth_blueprint, login_manager
 from routes.public import public_blueprint
+from routes.services import services_blueprint
 
 app = Flask(__name__, template_folder="templates/html", static_folder="templates/static")
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///main.db"
@@ -21,5 +22,7 @@ with app.app_context():
     # Register all routes
     app.register_blueprint(auth_blueprint, url_prefix="")
     app.register_blueprint(public_blueprint, url_prefix="")
+    app.register_blueprint(services_blueprint, url_prefix="")
+
 
     app.run(debug=True)
