@@ -11,6 +11,10 @@ def index():
 def home():
     return render_template('home.html')
 
+@public_blueprint.route('/store')
+def store():
+    return render_template('store.html')
+
 @public_blueprint.route('/about')
 def about():
     return render_template('about.html')

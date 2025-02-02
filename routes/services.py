@@ -17,7 +17,7 @@ class create_post_form(FlaskForm):
 
 @services_blueprint.route('/browser')
 @login_required
-def posts():
+def browser():
     return render_template('browser.html')
 
 
@@ -25,3 +25,8 @@ def posts():
 @login_required
 def create():
     return render_template('create.html')
+
+@services_blueprint.route('/post')
+@login_required
+def post():
+    return render_template('post.html')

@@ -1,5 +1,5 @@
 function main() {
-    createPost("Ryan", "This is a post", "\\auth\\post", ["Math", "Homework"]);
+    createPost("Ryan", "This is a post", "\\post", ["Math", "Homework"]);
 }
 
 function createPost(username, postTitle, postLink, tags) {
