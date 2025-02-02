@@ -22,9 +22,9 @@ class create_post_form(FlaskForm):
     image = FileField(validators=[FileAllowed(['jpg', 'png'], 'Images only!')])
 
 
-@services_blueprint.route('/posts')
+@services_blueprint.route('/post')
 @login_required
-def posts():
+def post():
     return render_template('post.html')
 
 @services_blueprint.route('/browser')

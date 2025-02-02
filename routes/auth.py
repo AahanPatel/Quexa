@@ -32,7 +32,7 @@ def unauthorized():
 @auth_blueprint.route('/auth/register', methods=["POST", "GET"])
 def register():
     if current_user.is_authenticated:
-        return redirect(url_for("services.posts"))
+        return redirect(url_for("services.browser"))
     form = register_form()
     if form.validate_on_submit():
         user = db.session.query(User).filter(User.name == form.name.data).first()
@@ -49,7 +49,7 @@ def register():
 @auth_blueprint.route('/auth/login', methods=["POST", "GET"])
 def login():
     if current_user.is_authenticated:
-        return redirect(url_for("services.posts"))
+        return redirect(url_for("services.browser"))
     form = login_form()
     if form.validate_on_submit():
         user = db.session.query(User).filter(User.name == form.name.data).first()
