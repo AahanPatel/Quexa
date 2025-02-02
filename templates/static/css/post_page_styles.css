@@ -3,6 +3,39 @@
 .scroll-container {
     height: 90%;
     overflow-y: auto;
+    background-image: linear-gradient(to bottom right, var(--primary-3), var(--secondary-1));
+}
+
+/* ================= BACK BUTTON ================= */
+
+.back-button {
+    position: absolute;
+    z-index: 2;
+    width: 5vw;
+    height: 2em;
+    left: 2vw;
+    padding-top: 1vh;
+    top: 10vh;
+    border-radius: 10px;
+    background-color: var(--darkest-color);
+    font-size: 1.1em;
+    color: var(--primary-1);
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.5s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1),
+                font-size 0.5s cubic-bezier(0.215, 0.610, 0.355, 1),
+                border 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+                animation-name: post-intro-anim;
+                animation-duration: 1.8s; 
+                animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
+}
+
+.back-button:hover {
+    background-color: rgba(0, 0, 0, .5);
+    transform: scale(95%);
+    font-size: 1.2em;
+    border: solid .15em var(--secondary-1);
 }
 
 /* ================= POST ================= */
@@ -22,7 +55,7 @@
     border-right: solid var(--primary-4) 10px;
     border-top: solid var(--primary-4) 10px;
     animation-name: post-intro-anim;
-    animation-duration: 2s; 
+    animation-duration: 1.5s; 
     animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
     /* border: red solid .2em; */
 }
@@ -109,7 +142,7 @@
     margin-bottom: 5px;
     
     animation-name: username-intro-anim;
-    animation-duration: 1.5s;
+    animation-duration: 1.3s;
     animation-timing-function: cubic-bezier(.59,.26,.39,.96);
 }
 
@@ -177,7 +210,7 @@
     border-right: solid var(--primary-4) 10px;
     border-top: solid var(--primary-4) 10px;
     animation-name: post-comments-intro-anim;
-    animation-duration: 2s; 
+    animation-duration: 1.7s; 
     animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
 }
 
