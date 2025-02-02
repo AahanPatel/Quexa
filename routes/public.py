@@ -11,5 +11,13 @@ def index():
 def home():
     return render_template('home.html')
 
+@public_blueprint.route('/about')
+def about():
+    return render_template('about.html')
+
+@public_blueprint.route('/profile')
+def profile():
+    return render_template('profile.html')
+
 
 

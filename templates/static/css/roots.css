@@ -1,5 +1,5 @@
 * {
-    font-family: "Helvetica";
+    font-family: "sans-serif";
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,7 +8,6 @@
 body, html {
     height: 100%;
     margin: 0;
-    font-family: Arial, sans-serif;
     top: 0vh;
     overflow: hidden;
     background-color: var(--background);
@@ -16,7 +15,6 @@ body, html {
 }
 
 :root {
-    --font-family1: "Times New Roman";
     --primary-5: #051421;
     --primary-4: #06242f;
     --primary-3: #4c7272;

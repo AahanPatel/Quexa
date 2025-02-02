@@ -15,10 +15,10 @@ class create_post_form(FlaskForm):
     topic = StringField('Title', validators=[InputRequired(), Length(min=1, max=100)])
 
 
-@services_blueprint.route('/posts')
+@services_blueprint.route('/browser')
 @login_required
 def posts():
-    return render_template('post.html')
+    return render_template('browser.html')
 
 
 @services_blueprint.route('/create')
