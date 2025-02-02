@@ -25,6 +25,7 @@ class create_post_form(FlaskForm):
 @services_blueprint.route('/post')
 @login_required
 def post():
+    post_id  = request.args.get('id')
     return render_template('post.html')
 
 @services_blueprint.route('/browser')
