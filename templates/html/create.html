@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post</title>
+    <link rel="stylesheet" href="..\static\css\post_creation_styles.css"/>
+    <link rel="stylesheet" href="..\static\css\header.css"/>
+    <link rel="stylesheet" href="..\static\css\roots.css"/>
+    <link rel="stylesheet" href="..\static\css\footer.css"/>
+
+    <script src="..\static\js\create_post_focused.js"></script>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-container">
+            <h1>WEBSITE NAME</h1>
+        </div>
+        <div class="menu-container">
+            <ul>
+                <li><a href=".\home.html">HOME</a></li>
+                <li><a>LEADERBOARD</a></li>
+                <li><a>STORE</a></li>
+                <li><a>ABOUT</a></li>
+                <li><a>PROFILE</a></li>
+            </ul>
+        </div>
+        <div class="search-wrap">
+            <div class="search">
+               <input type="text" class="searchTerm" placeholder="What are you looking for?">
+               <button type="submit" class="searchButton">
+                 <i class="fa fa-search"></i>
+              </button>
+            </div>
+         </div>
+    </div>
+    <div class="body">
+        <div class="page">
+            <form method="POST" enctype="multipart/form-data">
+                <div class="post-creation-title-container">
+                    <h1 class="post-creation-title">Ask a Question</h1>
+                </div>
+                <div class="tag-container">
+                    {{ form.csrf_token }}
+                    {% if form.errors|length > 0 %}
+                        {% for field, errors in form.errors.items() %}
+                        <div class="alert alert-danger">
+                            <small class="mx-1"> {{ '\n'.join(errors) }}</small>
+                        </div>
+                        {% endfor %}
+                    {% endif %}
+                    <h1 class="tag-label">Subject</h1>
+                    {{ form.topic.label(for_="topic")}}
+                    {{ form.topic(type_="name", class_="form-control", id_="topic", placeholder_="Pick A Topic") }}
+                </div>
+                <div class="title-container">
+                    <h1 class="title-label">Post Title</h1>
+                    {{ form.title.label(for_="title")}}
+                    {{ form.title(type_="name", class_="form-control", id_="title", placeholder_="Enter Title") }}
+                </div>
+                <div class="description-container">
+                    <h1 class="description-label">Your Question</h1>
+                    {{ form.message.label(for_="message")}}
+                    {{ form.message(type_="message", class_="form-control", id_="message", placeholder_="Enter Your Question") }}
+                </div>
+                <div class="title-container">
+                    <h1 class="title-label">Add An Image</h1>
+                    {{ form.image.label(for_="image")}}
+                    {{ form.image(type_="file", class_="form-control", id_="image") }}
+                </div>
+                <button type="submit" class="submit-button">POST</button>
+            </form>
+        </div>
+    </div>
+    <div class="footer">
+        <h1><i>@copyright 2025</i></h1>
+    </div>
+</body>
+</html>

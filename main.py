@@ -9,6 +9,7 @@ from routes.services import services_blueprint
 app = Flask(__name__, template_folder="templates/html", static_folder="templates/static")
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///main.db"
 app.config['SECRET_KEY'] = os.urandom(12)
+app.config['IMAGE_FOLDER'] = "/static/images"
 
 with app.app_context():
 

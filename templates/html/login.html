@@ -26,6 +26,10 @@
                 {{ form.password.label(for_="password")}}
                 {{ form.password(type_="password", class_="form-control", id_="password", placeholder_="Enter Password") }}
                 </div>
+                <div class="remember-field">
+                {{ form.remember.label(for_="remember")}}
+                {{ form.remember(type_="checkbox", class_="form-control", id_="remember") }}
+                </div>
                 <button type="submit" class="submit-button">SUBMIT</button>
                 <a href="\auth\register"><button type="button" class="sign-in">Sign In</button></a>
             </form>
