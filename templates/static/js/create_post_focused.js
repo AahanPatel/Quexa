@@ -44,6 +44,7 @@ function createFocusedPost(topic, username, title, description, image_name, comm
 
     for (let i = 0; i < numComments; i++) {
         const comment = document.createElement('li');
+        comment.id = comment_list[i].id
         comment.classList.add('comment');
 
         const commentUserContainer = document.createElement('div');
