@@ -315,10 +315,19 @@
     /* border: green solid .15em; */
 }
 
-.comments-list .comment .comment-text-container .comment-text {
+.comments-list .comment .comment-text-container h1 {
     margin: 5px;
     height: auto;
     color: var(--primary-2);
     font-size: 1em;
     font-weight: 1;
+}
+
+.comments-list .comment .comment-text-container a {
+    margin: 5px;
+    height: auto;
+    color: var(--primary-2);
+    font-size: 1em;
+    font-weight: 1;
+    border: red .1em solid;
 }

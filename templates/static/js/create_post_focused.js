@@ -1,4 +1,4 @@
-function createFocusedPost(topic, username, title, description, image_name, comment_list) {
+function createFocusedPost(topic, username, title, description, image_name, comment_list, is_owner) {
 
     // ELEMENTS
 
@@ -46,7 +46,7 @@ function createFocusedPost(topic, username, title, description, image_name, comm
         const comment = document.createElement('li');
         comment.classList.add('comment');
 
-        const commentUserContainer = document.createElement('div');
+        let commentUserContainer = document.createElement('div');
         commentUserContainer.classList.add('comment-user-container');
 
         const commentPfpContainer = document.createElement('div');
@@ -66,9 +66,17 @@ function createFocusedPost(topic, username, title, description, image_name, comm
         const commentTextContainer = document.createElement('div');
         commentTextContainer.classList.add('comment-text-container');
 
-        const commentText = document.createElement('h1');
-        commentText.classList.add('comment-text');
-        commentText.textContent = comment_list[i].message;  /* THIS SHOULD BE THE COMMENT MESSAGE */
+        let commentText;
+
+        if (is_owner == true) {
+            commentText = document.createElement('h1');
+            commentText.classList.add('comment-text');
+            commentText.textContent = comment_list[i].message;
+        } else {
+            commentText = document.createElement('a');
+            commentText.classList.add('comment-text');
+            commentText.textContent = comment_list[i].message;
+        }
         
         commentTextContainer.appendChild(commentText);  
         
