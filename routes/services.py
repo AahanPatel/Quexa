@@ -9,7 +9,7 @@ import shortuuid
 from app.db import db
 import os
 
-from app.db.models import Post
+from app.db.models import Post, Comment
 
 topic_choices = ['Math', 'Science', 'English', 'Social Studies']
 
@@ -22,12 +22,22 @@ class create_post_form(FlaskForm):
     image = FileField(validators=[FileAllowed(['jpg', 'png'], 'Images only!')])
 
 
-@services_blueprint.route('/post')
+@services_blueprint.route('/post', methods=["POST", "GET"])
 @login_required
 def post():
     post_id  = request.args.get('id')
+    if request.method == "POST":
+        new_comment = Comment(post_id=post_id, poster=current_user.name, message=request.form.get("message"))
+        db.session.add(new_comment)
+        db.session.commit()
     queried_post = db.session.query(Post).filter(Post.id == post_id).one()
+    queried_comments = db.session.query(Comment).filter(Comment.post_id == post_id).all()
     comment_list = []
+    for i in queried_comments:
+        comment_list.append({
+            "username": i.poster,
+            "message": i.message
+        })
     post_json = {
             "topic": queried_post.topic,
             "username": queried_post.title,

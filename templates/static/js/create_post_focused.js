@@ -1,4 +1,4 @@
-function createFocusedPost(topic, username, title, description, comments, image_name) {
+function createFocusedPost(topic, username, title, description, image_name, comment_list) {
 
     // ELEMENTS
 
@@ -15,7 +15,7 @@ function createFocusedPost(topic, username, title, description, comments, image_
         return;
     }
 
-    let numComments = 5; /* THIS SHOULD BE THE NUMBER OF COMMENTS, IDK HOW TO GET THAT YET */
+    let numComments = comment_list.length; /* THIS SHOULD BE THE NUMBER OF COMMENTS, IDK HOW TO GET THAT YET */
 
     // TOPICS 
 
@@ -42,7 +42,7 @@ function createFocusedPost(topic, username, title, description, comments, image_
 
     // COMMENTS
 
-    for (let i = 1; i <= numComments; i++) {
+    for (let i = 0; i < numComments; i++) {
         const comment = document.createElement('li');
         comment.classList.add('comment');
 
@@ -57,7 +57,7 @@ function createFocusedPost(topic, username, title, description, comments, image_
 
         const commentUsername = document.createElement('h1');
         commentUsername.classList.add('comment-username');
-        commentUsername.textContent = "Commenter " + i; /* THIS SHOULD BE THE COMMENTER'S USERNAME */
+        commentUsername.textContent = comment_list[i].username; /* THIS SHOULD BE THE COMMENTER'S USERNAME */
         
         commentPfpContainer.appendChild(commentPfp);
         commentUserContainer.appendChild(commentPfpContainer);
@@ -68,7 +68,7 @@ function createFocusedPost(topic, username, title, description, comments, image_
 
         const commentText = document.createElement('h1');
         commentText.classList.add('comment-text');
-        commentText.textContent = "This is test comment #" + i;  /* THIS SHOULD BE THE COMMENT MESSAGE */
+        commentText.textContent = comment_list[i].message;  /* THIS SHOULD BE THE COMMENT MESSAGE */
         
         commentTextContainer.appendChild(commentText);  
         

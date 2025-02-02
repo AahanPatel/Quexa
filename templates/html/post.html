@@ -56,7 +56,10 @@
         </div>
         <div class="comments-container">
             <div class="create-comment-container">
-                <input type="text" class="create-comment-field" placeholder="Write your comment here">
+                <form method="POST">
+                    <input type="text" class="create-comment-field" name="message" placeholder="Write your comment here">
+                    <button type="submit" class="submit-button">SUBMIT</button>
+                </form>
             </div>
             <ul class="comments-list"></ul>
         </div>
@@ -66,7 +69,7 @@
     </div>
     <script>
         post = {{ post | tojson }}
-        createFocusedPost(post.topic, post.username, post.title, post.description, post.comments, post.image);
+        createFocusedPost(post.topic, post.username, post.title, post.description, post.image, post.comments_list);
 
     </script>
 </body>

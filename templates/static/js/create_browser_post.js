@@ -50,4 +50,3 @@ function createPost(username, postTitle, postLink, tag) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", main);
