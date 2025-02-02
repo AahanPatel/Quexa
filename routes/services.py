@@ -1,4 +1,4 @@
-from flask import render_template, redirect, request, Blueprint, session, url_for
+from flask import render_template, redirect, request, Blueprint, session, url_for, jsonify
 from flask_wtf.file import FileRequired, FileField, FileAllowed
 from wtforms import StringField, PasswordField, EmailField, BooleanField
 from wtforms.fields.choices import SelectField
@@ -26,8 +26,17 @@ class create_post_form(FlaskForm):
 @login_required
 def post():
     post_id  = request.args.get('id')
-    post = db.session.query(Post).filter(Post.id == post_id).one()
-    return render_template('post.html')
+    queried_post = db.session.query(Post).filter(Post.id == post_id).one()
+    comment_list = []
+    post_json = {
+            "topic": queried_post.topic,
+            "username": queried_post.title,
+            "title": queried_post.title,
+            "description": queried_post.message,
+            "comments_list": comment_list,
+            "image": queried_post.image_name
+        }
+    return render_template('post.html', post=post_json)
 
 @services_blueprint.route('/browser')
 @login_required
@@ -60,7 +69,9 @@ def create():
             directory = 'templates/static/images/'
             if not os.path.exists(directory):
                 os.makedirs(directory)
-            image.save('templates/static/images/' + file_name + os.path.splitext(image.filename)[1])
+            file_extension = os.path.splitext(image.filename)[1]
+            file_name = file_name + file_extension
+            image.save('templates/static/images/' + file_name)
         new_post = Post(title=form.title.data, message=form.message.data, image_name=file_name, poster=current_user.name, topic=form.topic.data, resolved=False)
         db.session.add(new_post)
         db.session.commit()

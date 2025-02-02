@@ -64,5 +64,10 @@
     <div class="footer">
         <h1><i>@copyright 2025</i></h1>
     </div>
+    <script>
+        post = {{ post | tojson }}
+        createFocusedPost(post.topic, post.username, post.title, post.description, post.comments, post.image);
+
+    </script>
 </body>
 </html>

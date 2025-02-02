@@ -1,8 +1,4 @@
-function main() {
-    createPost();
-}
-
-function createPost(topic, user, title, description, comments) {
+function createFocusedPost(topic, username, title, description, comments, image_name) {
 
     // ELEMENTS
 
@@ -11,6 +7,7 @@ function createPost(topic, user, title, description, comments) {
     let posterUsername = document.querySelector(".username");
     let postTitle = document.querySelector(".title");
     let postDescription = document.querySelector(".description");
+    let imageContainer = document.querySelector(".post-images");
     let commentsContainer = document.querySelector(".comments-list");
 
     if (!topicsDiv) {
@@ -37,6 +34,10 @@ function createPost(topic, user, title, description, comments) {
     posterUsername.textContent = username; /* THIS SHOULD BE THE USER'S USERNAME */
     postTitle.textContent = title; /* THIS SHOULD BE THE POST SUBJECT/TITLE */
     postDescription.textContent = description; /* THIS SHOULD BE THE POST DESCRIPTION */
+
+    const image = document.createElement('img');
+    image.src = "/static/images/" + image_name;
+    imageContainer.appendChild(image);
 
 
     // COMMENTS
@@ -77,4 +78,3 @@ function createPost(topic, user, title, description, comments) {
     }
 }
 
-document.addEventListener("DOMContentLoaded", main);
