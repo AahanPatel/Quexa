@@ -1,77 +1,86 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-:root {
-    --font-family1: "Times New Roman";
-    --darkest-color: #0f0f0f;
-    --primary-color: #202020;
-    --primary-color-lighter: #4b4b4e;
-    --text-primary-color: #dadeeb;
-}
-
-body, html {
-    height: 100%;
-    margin: 0;
-    font-family: Arial, sans-serif;
-    top: 0vh;
-    overflow: hidden;
-    background-color: var(--darkest-color);
-}
-
-/* --------------- BODY --------------- */
-
 .body {
     display: flex;
     width: 100%;
     height: 100%;
     justify-content: center;
     align-items: center;
+    background-color: var(--darkest-color);
 }
 
 .body .main-page {
-    place-items: center; 
-    height: 70%;
-    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    height: auto;
+    padding: 8px;
+    width: 30%;
     border-radius: 5%;
-    background-color: var(--primary-color);
-    /* border: red solid .2em; */
+    background-color: var(--darkest-color);
+    border-bottom: solid var(--primary-2) 7px;
+    border-left: solid var(--primary-2) 7px;
+    border-right: solid var(--secondary-1) 7px;
+    border-top: solid var(--secondary-1) 7px;
 }
 
 /* --------------- LOGIN ELEMENTS --------------- */
 
-.body .main-page .username-field {
-    width: 70%;
+.body .main-page .username-field, .password-field {
+    width: 100%;
     height: 15%;
-    margin: 50px 0;
-    background-color: var(--primary-color);
-    border: var(--darkest-color) solid .5em;
+    margin: 2% 0;
+    font-size: 2em;
+    text-align: center;
+    color: var(--primary-1);
+    /* border: var(--darkest-color) solid .5em; */
+    /* border: red solid .1em; */
 }
 
-.body .main-page .password-field {
-    width: 70%;
-    height: 15%;
-    margin: 50px 0;
-    background-color: var(--primary-color);
-    border: var(--darkest-color) solid .5em;
+.form-control {
+    width: 20vw;
+    height: 5vh;
+    margin: 1vh 0;
+    font-size: .8em;
+    border-radius: 15px;
+    text-align: center;
+    color: var(--primary-1);
+    background-color: var(--darkest-color);
+    border: var(--primary-1) solid .12em;
+    /* border: yellow solid .1em; */
+}
+
+.main-page .remember-field {
+    color: var(--primary-1);
+    text-align: center;
+    font-size: 1.2em;
+    /* border: red solid .1em; */
 }
 
 .body .main-page .submit-button {
-    width: 100%;
+    width: 60%;
     height: 5vh;
-    margin: 50px 0;
+    border-radius: 25px;    
+    margin: 20px 0;
     font-size: 2em;
-}
-
-.body .main-page .sign-in {
-    width: 100%;
-    height: 4vh;
-    margin: 50px 0;
-    font-size: 1.5em;
     text-align: center; 
     text-decoration: none; 
     display: inline-block; 
     cursor: pointer;
+    color: var(--primary-1);
+    background-color: var(--primary-5);
+    border: solid var(--primary-2) .1em;
+}
+
+.body .main-page .sign-in {
+    width: 50%;
+    height: 4vh;
+    margin: 20px 0;
+    font-size: 1.5em;
+    border-radius: 25px;    
+    text-align: center; 
+    text-decoration: none; 
+    display: inline-block; 
+    cursor: pointer;
+    color: var(--primary-1);
+    background-color: var(--primary-5);
+    border: solid var(--primary-2) .1em;
 }
