@@ -20,19 +20,20 @@ class User(db.Model, UserMixin):
 # Post Model
 class Post(db.Model, UserMixin):
     id = db.Column('id', db.Integer, primary_key=True, autoincrement=True)
-    comment_id = db.Column(db.String(10))
     poster = db.Column(db.String(100))
     topic = db.Column(db.String(50))
     title = db.Column(db.String(100))
     message = db.Column(db.String(200))
     image_name = db.Column(db.String(10))
+    resolved = db.Column(db.Boolean, default=False)
 
-    def __init__(self, comment_id, poster, title, message, image_name):
-        self.comment_id = comment_id
+    def __init__(self, poster, title, message, image_name, topic, resolved):
         self.poster = poster
         self.title = title
         self.message = message
+        self.topic = topic
         self.image_name = image_name
+        self.resolved = resolved
 
 
 # Comment Model
