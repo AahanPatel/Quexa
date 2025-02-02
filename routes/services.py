@@ -11,7 +11,7 @@ import os
 
 from app.db.models import Post
 
-topic_choices = [(1, 'Math'), (1, 'Science'), (1, 'English'), (1, 'Social Studies')]
+topic_choices = ['Math', 'Science', 'English', 'Social Studies']
 
 services_blueprint = Blueprint('services', __name__)
 
@@ -25,6 +25,7 @@ class create_post_form(FlaskForm):
 @services_blueprint.route('/post')
 @login_required
 def post():
+    post_id  = request.args.get('id')
     return render_template('post.html')
 
 @services_blueprint.route('/browser')

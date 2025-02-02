@@ -65,8 +65,11 @@
         <h1><i>@copyright 2025</i></h1>
     </div>
 <script>
-    // posts = {{ posts }}
-    console.log(posts)
+    posts = {{ posts | tojson }}
+    for (var i =0; i < posts.length; i++) {
+        var post = posts[i];
+        createPost(post.poster, post.title, "/post?id=" + post.id, post.topic);
+    }
 </script>
 </body>
 </html>
