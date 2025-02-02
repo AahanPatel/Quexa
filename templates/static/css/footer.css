@@ -1,0 +1,15 @@
+
+/* ================= FOOTER ================= */
+
+.footer {
+    height: 4%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--darkest-color);
+}
+
+.footer h1 {
+    font-size: .5em;
+    color: var(--text-primary-color);
+}
