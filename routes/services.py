@@ -35,6 +35,7 @@ def post():
     comment_list = []
     for i in queried_comments:
         comment_list.append({
+            "id": i.id,
             "username": i.poster,
             "message": i.message
         })
