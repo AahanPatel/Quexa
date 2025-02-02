@@ -1,0 +1,44 @@
+.pointer {
+    position: absolute;
+    height: 13px;
+    width: 13px;
+    background-color: var(--primary-1);
+    border-radius: 50%;
+    transition: transform 0.1s;
+    transition: width, height, 0.3s ease-out;
+    z-index: 3;
+    pointer-events: none;
+}
+
+.color-spot {
+    position: absolute;
+    width: 900px;
+    height: 900px;
+    border-radius: 50%;
+    background: radial-gradient(var(--primary-3), #00000000 40%);
+    opacity: 0.05;
+    transition: transform 0.1s;
+    z-index: 1;
+    pointer-events: none;
+}
+
+.title-canvas {
+    height: 100%;
+    left: 0;
+    position: fixed;
+    z-index: 0;
+    pointer-events: none;
+    animation-name: fade-in-anim;
+    opacity: 0.5;
+    animation-duration: 1.5s; 
+    animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
+}
+
+@keyframes fade-in-anim {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: .5;
+    }
+}

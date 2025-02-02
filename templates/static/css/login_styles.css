@@ -12,14 +12,15 @@
     flex-direction: column;
     align-content: center;
     height: auto;
-    padding: 8px;
+    padding: 2vh;
     width: 30%;
     border-radius: 5%;
-    background-color: var(--darkest-color);
+    background-color: rgba(0, 0, 0, 0.2);
     border-bottom: solid var(--primary-2) 7px;
     border-left: solid var(--primary-2) 7px;
-    border-right: solid var(--secondary-1) 7px;
-    border-top: solid var(--secondary-1) 7px;
+    border-right: solid var(--primary-3) 7px;
+    border-top: solid var(--primary-3) 7px;
+    z-index: 2;
 }
 
 /* --------------- LOGIN ELEMENTS --------------- */

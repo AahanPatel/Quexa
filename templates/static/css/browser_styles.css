@@ -74,18 +74,17 @@
 .posts-container .posts-list {
     width: 95%;
     height: auto;
-    gap: 1vh;
     float: left;
     list-style: none;
-    border-left: var(--secondary-1) solid .15em;
 }
 
 .post {
     padding-left: 1vw;
     width: 100%;
     height: auto;
-    margin: 1vh 0;
+    margin: 2vh 0;
     padding-bottom: 5vh;
+    border-left: var(--secondary-1) solid .15em;
 }
 
 .post .post-information-container {

@@ -6,9 +6,15 @@
     <title>Homework Helper</title>
     <link rel="stylesheet" href="\static\css\login_styles.css"/>
     <link rel="stylesheet" href="\static\css\roots.css"/>
+    <link rel="stylesheet" href="\static\css\pointer.css"/>
+
+    <script src="\static\js\pointer_script.js"></script>
 </head>
 <body>
+    <div class="pointer"></div>
+    <div class="color-spot"></div>
     <div class="body">
+        <canvas class="title-canvas"></canvas>
         <div class="main-page">
             <form method="post">
                 {{ form.csrf_token }}

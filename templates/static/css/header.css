@@ -9,6 +9,7 @@
     background-color: var(--darkest-color);
     width: 100%;
     border-bottom: 0.1em var(--primary-3) solid;
+    z-index: 5;
 }
 
 /* --------------- WEBSITE LOGO --------------- */

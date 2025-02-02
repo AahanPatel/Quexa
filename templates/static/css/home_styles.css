@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     background-color: var(--darkest-color);
+    z-index: 1
     /* border: solid red .15em; */
 }
 
@@ -16,11 +17,14 @@
     display: flex;
     margin-top: 15vh;
     flex-direction: column;
-    padding: 0 2vw 1vh 2vw;
+    padding: 0 2vw 2vh 2vw;
     border-left: solid var(--primary-1) .2em; 
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 0 90px 10px 0;
     animation-name: left-border-anim;
     animation-duration: 1.5s; 
     animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
+    z-index: 1
 }
 
 @keyframes left-border-anim {
@@ -71,6 +75,7 @@
     width: 60%;
     height: 40%;
     gap: 25px;
+    z-index: 1
     /* border: solid blue .15em; */
 }
 
@@ -82,8 +87,10 @@
     width: 20vw;
     height: 8vh;
     text-decoration: none;
-    background-color: var(--primary-5);
+    background-color: rgba(0, 0, 0, .3);
     border: solid var(--primary-2) .2em;
+    transition: background-color 0.5s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                border-color 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
 .button-container a h1 {
@@ -93,24 +100,31 @@
     color: var(--primary-2);
 }
 
-.button-container a {
-    transition: background-color 0.5s cubic-bezier(0.215, 0.610, 0.355, 1), 
-                border-color 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
-    animation-name: button-anim;
-    animation-duration: 1.8s;
-    animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
-}
-
 .button-container a:hover {
     background-color: var(--primary-4);
     border-color: var(--secondary-1);
 }
 
-@keyframes button-anim {
+@keyframes button-anim-1 {
     from {
         margin-top: 15vw;
         opacity: 0;
         transform: scale(90%);
+        transform: rotateZ(-2deg);
+    }
+    to {
+        margin-top: 0;
+        opacity: 1;
+        transform: scale(100%);
+    }
+}
+
+@keyframes button-anim-2 {
+    from {
+        margin-top: 17vw;
+        opacity: 0;
+        transform: scale(90%);
+        transform: rotateZ(2deg);
     }
     to {
         margin-top: 0;
@@ -121,6 +135,9 @@
 
 .button-container .view-posts-button {
     transition: transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+    animation-name: button-anim-1;
+    animation-duration: 1.8s;
+    animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
 }
 
 .button-container .view-posts-button:hover {
@@ -129,6 +146,9 @@
 
 .button-container .make-post-button {
     transition: transform 0.8s cubic-bezier(0.215, 0.610, 0.355, 1);
+    animation-name: button-anim-2;
+    animation-duration: 1.9s;
+    animation-timing-function: cubic-bezier(.19,.04,.27,1.12);
 }
 
 .button-container .make-post-button:hover {

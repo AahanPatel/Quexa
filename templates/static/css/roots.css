@@ -25,4 +25,5 @@ body, html {
     --secondary-3: #c45f30;
     --background: #4a7890aa;
     --darkest-color: #0f0f0f;
+    --darkest-color-rgb: 15, 15, 15;
 }
