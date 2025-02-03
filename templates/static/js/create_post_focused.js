@@ -70,9 +70,9 @@ function createFocusedPost(topic, username, title, description, image_name, comm
         let commentText;
 
         if (is_owner == true) {
-            commentText = document.createElement('h1');
-        } else {
             commentText = document.createElement('a');
+        } else {
+            commentText = document.createElement('h1');
         }
         commentText.classList.add('comment-text');
         commentText.textContent = comment_list[i].message;
