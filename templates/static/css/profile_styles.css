@@ -11,7 +11,7 @@
 
 /* --------------- TITLE --------------- */
 
-.description-container {
+.user-container {
     width: 60%;
     height: auto;
     display: flex;
@@ -38,7 +38,7 @@
     }
 }
 
-.description-container .title {
+.user-container .user {
     color: var(--primary-1);
     font-size: 80px;
     animation-name: text-anim;
@@ -48,7 +48,7 @@
     /* border: solid blue .15em; */
 }
 
-.description-container .description {
+.user-container .sub-text {
     color: var(--primary-2);
     font-size: 30px;
     animation-name: text-anim;
@@ -67,7 +67,7 @@
 
 /* --------------- TEXT --------------- */
 
-.about-us-text {
+.description {
     width: 60%;
     margin-top: 4vh;
     color: var(--primary-1);
@@ -79,7 +79,7 @@
     /* border: red solid .1em; */
 }
 
-.about-us-text b {
+.description b {
     font-size: 1.3em;
     opacity: 1;
     color: var(--secondary-1);
@@ -96,4 +96,22 @@
         opacity: 1;
         transform: scale(100%);
     }
+}
+
+.logout-button {
+    color: var(--primary-2);
+    font-size: 1.5em;
+    margin-top: 4vh;
+    background-color: rgba(0, 0, 0, .4);
+    border-radius: 10px;
+    width: 60%;
+    padding: 1vw;
+    cursor: pointer;
+    transition: background-color 0.8s cubic-bezier(0.215, 0.610, 0.355, 1), 
+                transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
+}
+
+.logout-button:hover {
+    background-color: var(--primary-4);
+    transform: scale(103%);
 }

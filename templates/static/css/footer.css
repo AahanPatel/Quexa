@@ -2,9 +2,9 @@
 /* ================= FOOTER ================= */
 
 .footer {
-    position: absolute;
-    bottom: 2vh;
-    height: 4%;
+    position: relative;
+    bottom: 0;
+    height: 4vh;
     display: flex;
     justify-content: center;
     align-items: center;
