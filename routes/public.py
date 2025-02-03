@@ -1,6 +1,9 @@
 from flask import render_template, redirect, request, Blueprint, session, url_for
 from flask_login import current_user
 
+from app.db import db
+from app.db.models import User
+
 public_blueprint = Blueprint('public', __name__)
 
 @public_blueprint.route('/')
@@ -25,7 +28,11 @@ def profile():
 
 @public_blueprint.route('/leaderboard')
 def leaderboard():
-    return render_template('leaderboard.html')
+    top_users_list = []
+    top_users = db.session.query(User).order_by(User.score).limit(10).all()
+    for i in top_users:
+        top_users_list.append({"username": i.name, "score": i.score})
+    return render_template('leaderboard.html', top_user_list = top_users_list[::-1])
 
 
 

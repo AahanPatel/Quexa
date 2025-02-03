@@ -62,4 +62,10 @@
     </div>
 </body>
 <script src="\static\js\create_leaderboard.js"></script>
+<script>
+    top_users = {{ top_user_list | tojson }}
+    for (var i =0; i < top_users.length; i++) {
+        var user = top_users[i];
+        createLeaderboard(top_users[i].username, top_users[i].score);
+    }</script>
 </html>

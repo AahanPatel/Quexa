@@ -21,9 +21,3 @@ function createLeaderboard(username, points) {
     entry.appendChild(entryPoints);
     leaderboardList.appendChild(entry);
 }
-
-document.addEventListener("DOMContentLoaded", function() {
-    for (let i = 0; i < 5; i++) {
-        createLeaderboard("User " + i, i * 5);
-    }
-});
