@@ -69,7 +69,8 @@
     </div>
     <script>
         post = {{ post | tojson }}
-        createFocusedPost(post.topic, post.username, post.title, post.description, post.image, post.comments_list);
+        isOwner = {{ isOwner | lower }}
+        createFocusedPost(post.topic, post.username, post.title, post.description, post.image, post.comments_list, isOwner);
 
     </script>
 </body>

@@ -30,7 +30,10 @@ def post():
         new_comment = Comment(post_id=post_id, poster=current_user.name, message=request.form.get("message"))
         db.session.add(new_comment)
         db.session.commit()
+    isOwner = False
     queried_post = db.session.query(Post).filter(Post.id == post_id).one()
+    if queried_post.poster == current_user.name:
+        isOwner = True
     queried_comments = db.session.query(Comment).filter(Comment.post_id == post_id).all()
     comment_list = []
     for i in queried_comments:
@@ -47,7 +50,7 @@ def post():
             "comments_list": comment_list,
             "image": queried_post.image_name
         }
-    return render_template('post.html', post=post_json)
+    return render_template('post.html', post=post_json, isOwner=isOwner)
 
 @services_blueprint.route('/browser')
 @login_required
