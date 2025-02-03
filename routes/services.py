@@ -52,7 +52,7 @@ def post():
 @services_blueprint.route('/browser')
 @login_required
 def browser():
-    post_object_list = db.session.query(Post).filter(Post.resolved == False).order_by(
+    post_object_list = db.session.query(Post).order_by(
         Post.id.desc()).all()
     post_list = []
     for i in post_object_list:
@@ -63,7 +63,7 @@ def browser():
             "title": i.title,
             "message": i.message,
             "resolved": i.resolved,
-            "image": i.image_name
+            "image": i.image_name,
         })
     return render_template('browser.html', posts=post_list)
 
