@@ -25,14 +25,14 @@ class create_post_form(FlaskForm):
 @services_blueprint.route('/answer', methods=["POST", "GET"])
 @login_required
 def answer():
-    comment_id  = request.args.get('id')
+    comment_id  = request.args.get('id')    
     queried_comment = db.session.query(Comment).filter(Comment.id == comment_id).one()
     queried_post = db.session.query(Post).filter(Post.id == queried_comment.post_id).one()
     queried_post.resolved = True
     queried_user = db.session.query(User).filter(User.name == queried_post.poster).one()
     queried_user.score += 5
     db.session.commit()
-    return redirect(url_for('services.post', id=queried_post.id))
+    return redirect(url_for('services.browser'))
 
 
 
