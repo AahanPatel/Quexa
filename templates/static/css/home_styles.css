@@ -101,7 +101,7 @@
 }
 
 .button-container a:hover {
-    background-color: var(--primary-4);
+    background-color: rgba(200, 200, 200, 0.1);
     border-color: var(--secondary-1);
 }
 

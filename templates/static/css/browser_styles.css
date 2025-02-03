@@ -89,7 +89,8 @@
 }
 
 #resolved {
-    border-bottom: green solid .1em;
+    background-color: rgba(0, 200, 0, .1);
+    border-radius: 25px;
 }
 
 .post .post-information-container {
