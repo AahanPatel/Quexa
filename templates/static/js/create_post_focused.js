@@ -1,3 +1,4 @@
+ 
 function createFocusedPost(topic, username, title, description, image_name, comment_list, is_owner) {
 
     // ELEMENTS
@@ -71,6 +72,7 @@ function createFocusedPost(topic, username, title, description, image_name, comm
 
         if (is_owner == true) {
             commentText = document.createElement('a');
+            commentText.href = "/answer?id=" + comment_list[i].id;
         } else {
             commentText = document.createElement('h1');
         }
@@ -84,4 +86,3 @@ function createFocusedPost(topic, username, title, description, image_name, comm
         commentsContainer.appendChild(comment);
     }
 }
-

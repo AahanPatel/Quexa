@@ -9,7 +9,7 @@ import shortuuid
 from app.db import db
 import os
 
-from app.db.models import Post, Comment
+from app.db.models import Post, Comment, User
 
 topic_choices = ['Math', 'Science', 'English', 'Social Studies']
 
@@ -20,6 +20,20 @@ class create_post_form(FlaskForm):
     message = StringField('Message', validators=[InputRequired(), Length(min=1, max=200)])
     topic = SelectField('Topic', validators=[InputRequired()], choices=topic_choices)
     image = FileField(validators=[FileAllowed(['jpg', 'png'], 'Images only!')])
+
+
+@services_blueprint.route('/answer', methods=["POST", "GET"])
+@login_required
+def answer():
+    comment_id  = request.args.get('id')
+    queried_comment = db.session.query(Comment).filter(Comment.id == comment_id).one()
+    queried_post = db.session.query(Post).filter(Post.id == queried_comment.post_id).one()
+    queried_post.resolved = True
+    queried_user = db.session.query(User).filter(User.name == queried_post.poster).one()
+    queried_user.score += 5
+    db.session.commit()
+    return redirect(url_for('services.post', id=queried_post.id))
+
 
 
 @services_blueprint.route('/post', methods=["POST", "GET"])
