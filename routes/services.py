@@ -39,6 +39,7 @@ def answer():
 @services_blueprint.route('/post', methods=["POST", "GET"])
 @login_required
 def post():
+    isResolved  = request.args.get('isResolved')
     post_id  = request.args.get('id')
     if request.method == "POST":
         new_comment = Comment(post_id=post_id, poster=current_user.name, message=request.form.get("message"))
@@ -64,7 +65,7 @@ def post():
             "comments_list": comment_list,
             "image": queried_post.image_name
         }
-    return render_template('post.html', post=post_json, isOwner=isOwner)
+    return render_template('post.html', post=post_json, isOwner=isOwner, isResolved=isResolved)
 
 @services_blueprint.route('/browser')
 @login_required

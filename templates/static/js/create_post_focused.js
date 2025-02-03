@@ -1,5 +1,5 @@
  
-function createFocusedPost(topic, username, title, description, image_name, comment_list, is_owner) {
+function createFocusedPost(topic, username, title, description, image_name, comment_list, is_owner, isResolved) {
 
     // ELEMENTS
 
