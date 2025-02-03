@@ -24,7 +24,8 @@ def about():
 
 @public_blueprint.route('/profile')
 def profile():
-    return render_template('profile.html')
+    queried_user = db.session.query(User).filter(User.name == current_user.name)
+    return render_template('profile.html', name=queried_user.name, score=queried_user.score)
 
 @public_blueprint.route('/leaderboard')
 def leaderboard():
