@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework Helper</title>
+    <link rel="stylesheet" href="\static\css\header.css"/>
+    <link rel="stylesheet" href="\static\css\leaderboard_styles.css"/>
+    <link rel="stylesheet" href="\static\css\roots.css"/>
+    <link rel="stylesheet" href="\static\css\footer.css"/>
+    <link rel="stylesheet" href="\static\css\pointer.css"/>
+
+    <script src="\static\js\pointer_script.js"></script>
+</head>
+<body>
+    <div class="pointer"></div>
+    <div class="color-spot"></div>
+    <div class="header">
+        <div class="logo-container">
+            <h1>WEBSITE NAME</h1>
+        </div>
+        <div class="menu-container">
+            <canvas class="title-canvas"></canvas>
+            <ul>
+                <li><a href="/home">HOME</a></li>
+                <li><a>LEADERBOARD</a></li>
+                <li><a href="/store">STORE</a></li>
+                <li><a href="/about">ABOUT</a></li>
+                <li><a href="/profile">PROFILE</a></li>
+            </ul>
+        </div>
+        <div class="search-wrap">
+            <div class="search">
+               <input type="text" class="searchTerm" placeholder="What are you looking for?">
+               <button type="submit" class="searchButton">
+                 <i class="fa fa-search"></i>
+              </button>
+            </div>
+         </div>
+    </div>
+    <div class="body">
+        <div class="description-container">
+            <h1 class="title">
+                Leaderboard
+            </h1>
+            <h2 class="description">
+                See the most awarded repliers
+            </h2>
+        </div>
+        <div class="leaderboard-container"> 
+            <div class="leaderboard-list">
+                <!-- example leaderboard entry -->
+                <!-- <div class="leaderboard-entry">
+                    <h1 class="username"> username </h1>
+                    <h2 class="points"> 25 </h2>
+                </div> -->
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <h1><i>@copyright 2025</i></h1>
+    </div>
+</body>
+<script src="\static\js\create_leaderboard.js"></script>
+</html>

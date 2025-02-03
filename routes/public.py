@@ -23,5 +23,9 @@ def about():
 def profile():
     return render_template('profile.html')
 
+@public_blueprint.route('/leaderboard')
+def leaderboard():
+    return render_template('leaderboard.html')
+
 
 
