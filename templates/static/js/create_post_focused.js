@@ -70,7 +70,7 @@ function createFocusedPost(topic, username, title, description, image_name, comm
 
         let commentText;
 
-        if (is_owner == true) {
+        if (is_owner == true && isResolved == false) {
             commentText = document.createElement('a');
             commentText.href = "/answer?id=" + comment_list[i].id;
         } else {

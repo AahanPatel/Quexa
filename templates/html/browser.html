@@ -64,12 +64,13 @@
     <div class="footer">
         <h1><i>@copyright 2025</i></h1>
     </div>
-<script>
-    posts = {{ posts | tojson }}
-    for (var i =0; i < posts.length; i++) {
-        var post = posts[i];
-        createPost(post.poster, post.title, "/post?id=" + post.id + "&isResolved=" + post.resolved, post.topic, post.resolved);
-    }
-</script>
+    <script>
+        posts = {{ posts | tojson }}
+        for (var i =0; i < posts.length; i++) {
+            var post = posts[i];
+            createPost(post.poster, post.title, "/post?id=" + post.id + "&isResolved=" + post.resolved, post.topic, post.resolved);
+        }
+    </script>
+    <script src="\static\js\color_schemes.js"></script>
 </body>
 </html>
