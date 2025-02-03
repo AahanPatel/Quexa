@@ -4,6 +4,10 @@ function createPost(username, postTitle, postLink, tag, resolved) {
     const post = document.createElement("li");
     post.classList.add("post");
 
+    if (resolved) {
+        post.id ="resolved";
+    }
+
     const infoContainer = document.createElement("div");
     infoContainer.classList.add("post-information-container");
 

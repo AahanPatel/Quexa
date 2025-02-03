@@ -329,5 +329,8 @@
     color: var(--primary-2);
     font-size: 1em;
     font-weight: 1;
-    border: red .1em solid;
+    cursor: pointer;
+    background-color: var(--primary-5);
+    padding: .5em;
+    border-radius: 10px;
 }

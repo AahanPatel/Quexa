@@ -71,13 +71,11 @@ function createFocusedPost(topic, username, title, description, image_name, comm
 
         if (is_owner == true) {
             commentText = document.createElement('h1');
-            commentText.classList.add('comment-text');
-            commentText.textContent = comment_list[i].message;
         } else {
             commentText = document.createElement('a');
-            commentText.classList.add('comment-text');
-            commentText.textContent = comment_list[i].message;
         }
+        commentText.classList.add('comment-text');
+        commentText.textContent = comment_list[i].message;
         
         commentTextContainer.appendChild(commentText);  
         

@@ -88,6 +88,10 @@
     border-left: var(--secondary-1) solid .15em;
 }
 
+#resolved {
+    border-bottom: green solid .1em;
+}
+
 .post .post-information-container {
     display: flex;
     flex-direction: column;
