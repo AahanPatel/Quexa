@@ -184,6 +184,15 @@
     font-weight: 1;
 }
 
+.submit-button {
+    background-color: rgba(0, 0, 0, .4);
+    color: var(--primary-1);
+    border: solid .1em var(--secondary-1);
+    width: 5em;
+    height: 2em;
+    border-radius: 5px;
+}
+
 /* --------------- IMAGES (OPTIONAL) --------------- */
 
 .post-images {
@@ -238,9 +247,9 @@
     /* border: green solid .15em; */
     width: 95%;
     margin-top: 1vh;
-    display: flex;
+    display: flexbox;
+    flex-direction: row;
     justify-content: center;
-    align-items: center;
     height: auto;
 }
 
