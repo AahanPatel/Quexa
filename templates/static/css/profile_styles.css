@@ -111,6 +111,11 @@
                 transform 0.5s cubic-bezier(0.215, 0.610, 0.355, 1);
 }
 
+.form-control {
+    border-radius: 15px;
+    border: red solid .1em;
+}
+
 .logout-button:hover {
     background-color: var(--primary-4);
     transform: scale(103%);
